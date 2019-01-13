@@ -1,0 +1,187 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:2:1-34:12
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:2:1-34:12
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:2:1-34:12
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:2:1-34:12
+MERGED from [com.google.android.gms:play-services-vision:15.0.0] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-vision-15.0.0.aar/282bc75bb6bc45072252c363b7815fba/AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:design:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/4176b6f0c22ecab83ee9b07d208384ab/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-vision-common:15.0.0] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-vision-common-15.0.0.aar/9ca41d1478044c0b12ced0881b26ce43/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-15.0.1.aar/8dfc1228c3caf1142f05b9f542716195/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-flags:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-flags-15.0.1.aar/2977d0d11bcda193d2c3cc45e8ca3b84/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-phenotype-15.0.1.aar/a5081284fd07ba49dcfb6b285ce42798/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/c29aaff2e8c38b8eba65c9e1f8b46560/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/bb77d135e07916ab5ad4d501ee76d2e1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/582b53852a5b4dd06564143bdb42c564/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/8e157d337fe31f267d08281d28867343/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/6c62cd4dbf79132f78225833dccb5727/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/be16ca466ae80a2a3be8ad6effa5b586/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cccadfa5309cd0a00c03b058f7832857/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/9ad938f17bbcd61664c0577324e2cb0a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/697fdcbf6f4edff05f6f7e54c8acbe78/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/33cac6e9d16cc8948cf357f8025b0e73/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/e953dfd6279af762aad0548b55ddaa89/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/7887c8a2a050ee97b0678bccf36f88ed/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/5abfc8414381f90f2ebcb4a1dbe61d47/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/141ee0fe175ca120239b746ab228028b/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/34a2dfda61347228894ff611a1c72964/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/e9daed9d1b8b7715e65c772e19b1004d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/24c6a79d8439f03122bd573e8ef45dc8/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/820186c94913adafd921b6b789ed6c65/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:2:1-34:12
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:2:1-34:12
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:2:1-34:12
+	package
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:3:5-62
+		INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+		INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:2:1-34:12
+		INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:2:1-34:12
+		INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:2:11-69
+	android:installLocation
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:4:5-35
+uses-feature#android.hardware.camera
+ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:6:5-60
+	android:name
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:6:19-57
+uses-permission#android.permission.CAMERA
+ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:8:5-65
+	android:name
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:8:22-62
+application
+ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:10:5-32:19
+MERGED from [com.google.android.gms:play-services-vision:15.0.0] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-vision-15.0.0.aar/282bc75bb6bc45072252c363b7815fba/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision:15.0.0] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-vision-15.0.0.aar/282bc75bb6bc45072252c363b7815fba/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:15.0.0] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-vision-common-15.0.0.aar/9ca41d1478044c0b12ced0881b26ce43/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-vision-common:15.0.0] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-vision-common-15.0.0.aar/9ca41d1478044c0b12ced0881b26ce43/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-15.0.1.aar/8dfc1228c3caf1142f05b9f542716195/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-15.0.1.aar/8dfc1228c3caf1142f05b9f542716195/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-phenotype-15.0.1.aar/a5081284fd07ba49dcfb6b285ce42798/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-phenotype-15.0.1.aar/a5081284fd07ba49dcfb6b285ce42798/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/c29aaff2e8c38b8eba65c9e1f8b46560/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/c29aaff2e8c38b8eba65c9e1f8b46560/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/bb77d135e07916ab5ad4d501ee76d2e1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/bb77d135e07916ab5ad4d501ee76d2e1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/582b53852a5b4dd06564143bdb42c564/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/582b53852a5b4dd06564143bdb42c564/AndroidManifest.xml:22:5-26:19
+	android:supportsRtl
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:16:9-37
+	android:label
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:15:9-37
+	android:hardwareAccelerated
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:13:9-43
+	android:fullBackupContent
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:12:9-42
+	android:icon
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:14:9-38
+	android:allowBackup
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:17:9-47
+meta-data#com.google.android.gms.version
+ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:18:9-20:69
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/582b53852a5b4dd06564143bdb42c564/AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/582b53852a5b4dd06564143bdb42c564/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:20:13-66
+	android:name
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:19:13-58
+meta-data#com.google.android.gms.vision.DEPENDENCIES
+ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:21:9-23:35
+	android:value
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:23:13-32
+	android:name
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:22:13-70
+activity#com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity
+ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:25:9-31:20
+	android:label
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:26:13-38
+	android:name
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:25:19-100
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:27:13-30:29
+action#android.intent.action.MAIN
+ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml:29:27-74
+uses-sdk
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+MERGED from [com.google.android.gms:play-services-vision:15.0.0] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-vision-15.0.0.aar/282bc75bb6bc45072252c363b7815fba/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision:15.0.0] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-vision-15.0.0.aar/282bc75bb6bc45072252c363b7815fba/AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:design:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/4176b6f0c22ecab83ee9b07d208384ab/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/4176b6f0c22ecab83ee9b07d208384ab/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:15.0.0] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-vision-common-15.0.0.aar/9ca41d1478044c0b12ced0881b26ce43/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-vision-common:15.0.0] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-vision-common-15.0.0.aar/9ca41d1478044c0b12ced0881b26ce43/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-15.0.1.aar/8dfc1228c3caf1142f05b9f542716195/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-15.0.1.aar/8dfc1228c3caf1142f05b9f542716195/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-flags-15.0.1.aar/2977d0d11bcda193d2c3cc45e8ca3b84/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-flags-15.0.1.aar/2977d0d11bcda193d2c3cc45e8ca3b84/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-phenotype-15.0.1.aar/a5081284fd07ba49dcfb6b285ce42798/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-phenotype-15.0.1.aar/a5081284fd07ba49dcfb6b285ce42798/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/c29aaff2e8c38b8eba65c9e1f8b46560/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/c29aaff2e8c38b8eba65c9e1f8b46560/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/bb77d135e07916ab5ad4d501ee76d2e1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/bb77d135e07916ab5ad4d501ee76d2e1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/582b53852a5b4dd06564143bdb42c564/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/582b53852a5b4dd06564143bdb42c564/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/8e157d337fe31f267d08281d28867343/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/8e157d337fe31f267d08281d28867343/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/6c62cd4dbf79132f78225833dccb5727/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/6c62cd4dbf79132f78225833dccb5727/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/be16ca466ae80a2a3be8ad6effa5b586/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/be16ca466ae80a2a3be8ad6effa5b586/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cccadfa5309cd0a00c03b058f7832857/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cccadfa5309cd0a00c03b058f7832857/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/9ad938f17bbcd61664c0577324e2cb0a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/9ad938f17bbcd61664c0577324e2cb0a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/697fdcbf6f4edff05f6f7e54c8acbe78/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/697fdcbf6f4edff05f6f7e54c8acbe78/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/33cac6e9d16cc8948cf357f8025b0e73/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/33cac6e9d16cc8948cf357f8025b0e73/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/e953dfd6279af762aad0548b55ddaa89/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/e953dfd6279af762aad0548b55ddaa89/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/7887c8a2a050ee97b0678bccf36f88ed/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/7887c8a2a050ee97b0678bccf36f88ed/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/5abfc8414381f90f2ebcb4a1dbe61d47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/5abfc8414381f90f2ebcb4a1dbe61d47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/141ee0fe175ca120239b746ab228028b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/cem/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/141ee0fe175ca120239b746ab228028b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/34a2dfda61347228894ff611a1c72964/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/34a2dfda61347228894ff611a1c72964/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/e9daed9d1b8b7715e65c772e19b1004d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/e9daed9d1b8b7715e65c772e19b1004d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/24c6a79d8439f03122bd573e8ef45dc8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/24c6a79d8439f03122bd573e8ef45dc8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/820186c94913adafd921b6b789ed6c65/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/cem/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/820186c94913adafd921b6b789ed6c65/AndroidManifest.xml:20:5-44
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+		INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+		ADDED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+		INJECTED from /home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/AndroidManifest.xml
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/c29aaff2e8c38b8eba65c9e1f8b46560/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/c29aaff2e8c38b8eba65c9e1f8b46560/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/c29aaff2e8c38b8eba65c9e1f8b46560/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/cem/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/c29aaff2e8c38b8eba65c9e1f8b46560/AndroidManifest.xml:24:13-79
