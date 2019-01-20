@@ -12,7 +12,7 @@ public class Predictor
 		}
 		int avg = total/(past.length-1);
 		ZonedDateTime now = ZonedDateTime.now();
-		return now.plusDays(avg);
+		return past[past.length-1].plusDays(avg);
 	}
 
 	public static void main(String[] args)
