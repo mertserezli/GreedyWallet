@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "outputFile": "/home/cem/GreedyWallet/ocr-reader-complete/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/src/main/res/values-w820dp/dimens.xml",
+                    "source": "/home/cem/GreedyWallet/ocr-reader-complete/app/src/main/res/values-w820dp/dimens.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "4",

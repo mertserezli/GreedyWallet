@@ -19,6 +19,7 @@ import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.util.SparseArray;
 
+import com.google.android.gms.samples.vision.ocrreader.models.Item;
 import com.google.android.gms.samples.vision.ocrreader.ui.camera.GraphicOverlay;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
@@ -31,6 +32,8 @@ import java.util.ArrayList;
  */
 public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
     ArrayList<String> scannedTexts=new ArrayList<>();
+    static ArrayList<Item> items=new ArrayList<>();
+    static ArrayList<String> itemsName=new ArrayList<>();
     private GraphicOverlay<OcrGraphic> graphicOverlay;
 
     OcrDetectorProcessor(GraphicOverlay<OcrGraphic> ocrGraphicOverlay) {
@@ -54,11 +57,23 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
                 Log.d("OcrDetectorProcessor", "Text detected! " + item.getValue());
                 OcrGraphic graphic = new OcrGraphic(graphicOverlay, item);
                 //graphicOverlay.add(graphic);
-                String value=item.getValue();
-                if ((value.contains("milk")||value.contains("salt")||value.contains("sugar")) && !scannedTexts.contains(value)) {
-                    scannedTexts.add(item.getValue());
-                    OcrCaptureActivity.tts.speak(item.getValue(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+                String value=item.getValue().toLowerCase();
+                if(value.contains("\n")){
+                    String[] values=value.split("\n");
+                    for (String s:values){
+                        if (!scannedTexts.contains(s) && itemsName.contains(s)) {
+                            scannedTexts.add(s);
+                            OcrCaptureActivity.tts.speak(s, TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+                        }
+                    }
                 }
+                else{
+                    if (!scannedTexts.contains(value) && itemsName.contains(value)) {
+                        scannedTexts.add(value);
+                        OcrCaptureActivity.tts.speak(item.getValue(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+                    }
+                }
+
             }
         }
 

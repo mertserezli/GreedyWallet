@@ -805,6 +805,8 @@ id auto
 id beginning
 id blocking
 id bottom
+id button
+id button2
 id buttonPanel
 id cancel_action
 id center
@@ -991,6 +993,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout addmanually
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1005,6 +1008,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout main
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1076,6 +1080,13 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string default_web_client_id
+string firebase_database_url
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string low_storage_error
 string no_camera_permission
 string ocr_error
@@ -1089,6 +1100,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string permission_camera_rationale
+string project_id
 string read_text
 string search_menu_title
 string status_bar_notification_info_overflow

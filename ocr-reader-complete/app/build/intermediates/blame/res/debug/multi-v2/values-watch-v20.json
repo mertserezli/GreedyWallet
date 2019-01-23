@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/cem/Downloads/android-vision-master/visionSamples/ocr-codelab/ocr-reader-complete/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "/home/cem/GreedyWallet/ocr-reader-complete/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/cem/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cccadfa5309cd0a00c03b058f7832857/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/home/cem/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/719830dccf37a03fe81882ca38f0c73a/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
