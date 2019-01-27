@@ -57,7 +57,7 @@ public class Main extends AppCompatActivity {
         startActivity(intent);
     }
     public void onButtonClickManual(View view) {
-        Intent intent=new Intent(this,OcrCaptureActivity.class);
+        Intent intent=new Intent(this,AddManually.class);
         startActivity(intent);
     }
 }
