@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Jan 23 15:58:10 EET 2019
+#Fri Feb 15 19:33:19 EET 2019
 1.base=/home/cem/GreedyWallet/ocr-reader-complete/app/build/intermediates/dex/debug/mergeExtDexDebug/out
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY

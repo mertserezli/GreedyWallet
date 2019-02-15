@@ -25,29 +25,33 @@ public class Main extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference().child("items");
         //final Semaphore semaphore = new Semaphore(0);
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        ValueEventListener postListener = new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot!=null) {
-                    for (DataSnapshot data : dataSnapshot.getChildren()) {
-                        Item newItem = new Item();
-                        HashMap value = (HashMap) data.getValue();
-                        newItem.setKey(data.getKey());
-                        newItem.setCategory((String) value.get("category"));
-                        newItem.setPrice((Double) value.get("price"));
-                        OcrDetectorProcessor.items.add(newItem);
-                        OcrDetectorProcessor.itemsName.add(newItem.getKey());
-                        System.out.println(newItem);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //System.out.println("deneme");
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                    Item newItem = new Item();
+                    HashMap value = (HashMap) data.getValue();
+                    newItem.setKey((String) value.get("Isim"));
+                    newItem.setCategory((String) value.get("AnaKategori"));
+                    String price=((String) value.get("Fiyat"));
+                    if(price.contains(".")){
+                        price=price.substring(0,price.indexOf(","));
+                        price=price.replace(".","");
                     }
+                    newItem.setPrice(Double.parseDouble((price.replaceAll(" ","").replaceAll(",","."))));
+                    OcrDetectorProcessor.items.add(newItem);
+                    OcrDetectorProcessor.itemsName.add(newItem.getKey().toLowerCase());
+                    System.err.println(newItem);
                 }
-                //semaphore.release();
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-               // semaphore.release();
+            public void onCancelled(DatabaseError databaseError) {
+
             }
-        });
+        };
+        myRef.addValueEventListener(postListener);
 
         setContentView(R.layout.main);
     }
