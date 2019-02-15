@@ -28,8 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OcrCaptureActivity"></activity>
-        <activity android:name=".AddManually"></activity>
+        <activity android:name="com.halfbyte.greedywallet.OcrCaptureActivity"></activity>
+        <activity android:name="com.halfbyte.greedywallet.AddManually"></activity>
 
     </application>
 

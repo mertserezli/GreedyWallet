@@ -35,11 +35,16 @@ public class Main extends AppCompatActivity {
                     newItem.setKey((String) value.get("Isim"));
                     newItem.setCategory((String) value.get("AnaKategori"));
                     String price=((String) value.get("Fiyat"));
+                    String saleString=value.get("Indirim").toString().replaceAll("\n","").replaceAll("%","");
+                    int sale=Integer.parseInt(saleString);
                     if(price.contains(".")){
                         price=price.substring(0,price.indexOf(","));
                         price=price.replace(".","");
                     }
                     newItem.setPrice(Double.parseDouble((price.replaceAll(" ","").replaceAll(",","."))));
+                    newItem.setSubCategory((String) value.get("AltKategori"));
+                    newItem.setSale(sale);
+                    newItem.setPopularity(Integer.parseInt(value.get("PopularityRank").toString()));
                     OcrDetectorProcessor.items.add(newItem);
                     OcrDetectorProcessor.itemsName.add(newItem.getKey().toLowerCase());
                     System.err.println(newItem);
