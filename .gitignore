@@ -1,0 +1,8 @@
+
+ocr-reader-complete/\.idea/
+
+ocr-reader-complete/app/build/
+
+*.iml
+
+ocr-reader-complete/local\.properties

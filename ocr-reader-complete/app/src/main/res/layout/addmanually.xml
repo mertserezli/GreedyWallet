@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/enterItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_item_name"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/itemNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="enter item name"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/addToList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Item to List"
+        tools:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/getOptimizedItemList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Optimized Item List"
+        tools:textAllCaps="false" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
