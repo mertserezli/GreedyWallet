@@ -1,4 +1,4 @@
-package com.google.android.gms.samples.vision.ocrreader;
+package com.halfbyte.greedywallet;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity;
-import com.google.android.gms.samples.vision.ocrreader.R;
-import com.google.android.gms.samples.vision.ocrreader.models.Item;
+import com.halfbyte.greedywallet.OcrCaptureActivity;
+import com.halfbyte.greedywallet.R;
+import com.halfbyte.greedywallet.models.Item;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

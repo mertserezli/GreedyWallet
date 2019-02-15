@@ -1,4 +1,4 @@
-package com.google.android.gms.samples.vision.ocrreader.models;
+package com.halfbyte.greedywallet.models;
 
 public class Item {
     public String getKey() {
