@@ -1,5 +1,7 @@
 package com.halfbyte.greedywallet;
 
+import android.content.Intent;
+import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,12 +19,14 @@ import com.halfbyte.greedywallet.models.Item;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class AddManually extends AppCompatActivity {
 
-    static ArrayList<Item> items=new ArrayList<>();
+    public static ArrayList<Item> items=new ArrayList<>();
     ArrayList<String> categoriesInList = new ArrayList<>();
     ArrayAdapter<String> adapter;
+    public static List<Item> optimizedList = new ArrayList<>();
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -46,6 +50,7 @@ public class AddManually extends AppCompatActivity {
                     newItem.setKey((String) value.get("Isim"));
                     newItem.setCategory((String) value.get("AnaKategori"));
                     String price=((String) value.get("Fiyat"));
+                    newItem.setPopularityRank( (Long) value.get("PopularityRank"));
                     if(price.contains(".")){
                         price=price.substring(0,price.indexOf(","));
                         price=price.replace(".","");
@@ -64,17 +69,22 @@ public class AddManually extends AppCompatActivity {
             public void onClick(View v) {
                 EditText input = (EditText)findViewById(R.id.itemNameInput);
                 final String groupName = input.getText().toString();
-                System.out.println(items);
                 if (categoryExists(groupName)){
                     adapter.add(groupName);
                 }
             }
         });
 
+        final Intent resultIntent=new Intent(this, ResultsActivity.class);
         final Button getOptimizedListButton = (Button) findViewById(R.id.getOptimizedItemList);
         getOptimizedListButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                
+                ArrayList<String> groupList = new ArrayList<String>();
+                for (int i = 0; i < adapter .getCount(); i++)
+                    groupList.add(adapter .getItem(i));
+                optimizedList = Optimizer.optimizer(groupList);
+                System.err.println(optimizedList);
+                startActivity(resultIntent);
             }
         });
     }

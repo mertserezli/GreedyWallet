@@ -31,6 +31,26 @@ public class Item {
 
     private double price;
 
+    public double getPopularityRank() {
+        return popularityRank;
+    }
+
+    public void setPopularityRank(double popularityRank) {
+        this.popularityRank = popularityRank;
+    }
+
+    private double popularityRank;
+
+    public String getSubCategory() {
+        return subCategory;
+    }
+
+    public void setSubCategory(String subCategory) {
+        this.subCategory = subCategory;
+    }
+
+    private String subCategory;
+
     @Override
     public String toString(){
         return "Key:"+this.key+"\n" +

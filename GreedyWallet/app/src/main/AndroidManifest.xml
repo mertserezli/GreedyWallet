@@ -3,8 +3,9 @@
     package="com.halfbyte.greedywallet">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -12,18 +13,22 @@
         android:hardwareAccelerated="true"
         android:icon="@drawable/icon"
         android:label="GreedyWallet"
-        android:supportsRtl = "true"
-        android:theme="@style/Theme.AppCompat" >
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat">
         <meta-data
             android:name="com.halfbyte.greedywallet.DEPENDENCIES"
             android:value="ocr" />
-        <activity android:name="com.halfbyte.greedywallet.Main">
+
+        <activity android:name=".Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OcrCaptureActivity"></activity>
-        <activity android:name=".AddManually"></activity>
+        <activity android:name=".OcrCaptureActivity" />
+        <activity android:name=".AddManually" />
+        <activity android:name=".ResultsActivity"></activity>
     </application>
+
 </manifest>

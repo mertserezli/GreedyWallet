@@ -38,7 +38,7 @@ public class Main extends AppCompatActivity {
                     newItem.setPrice(Double.parseDouble((price.replaceAll(" ","").replaceAll(",","."))));
                     OcrDetectorProcessor.items.add(newItem);
                     OcrDetectorProcessor.itemsName.add(newItem.getKey().toLowerCase());
-                    System.err.println(newItem);
+                    //System.err.println(newItem);
                 }
             }
 
