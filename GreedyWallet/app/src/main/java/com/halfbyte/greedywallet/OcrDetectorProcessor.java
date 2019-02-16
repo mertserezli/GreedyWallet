@@ -33,6 +33,7 @@ import java.util.ArrayList;
 public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
     ArrayList<String> scannedTexts=new ArrayList<>();
     static ArrayList<Item> items=new ArrayList<>();
+    static ArrayList<Item> scannedItems=new ArrayList<>();
     static ArrayList<String> itemsName=new ArrayList<>();
     private GraphicOverlay<OcrGraphic> graphicOverlay;
 
@@ -63,6 +64,12 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
                     for (String s:values){
                         if (!scannedTexts.contains(s) && itemsName.contains(s)) {
                             scannedTexts.add(s);
+                            for (Item item1:OcrDetectorProcessor.items){
+                                if (item1.getKey().equalsIgnoreCase(s)){
+                                    scannedItems.add(item1);
+                                    break;
+                                }
+                            }
                             OcrCaptureActivity.tts.speak(s, TextToSpeech.QUEUE_ADD, null, "DEFAULT");
                         }
                     }
@@ -70,6 +77,12 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
                 else{
                     if (!scannedTexts.contains(value) && itemsName.contains(value)) {
                         scannedTexts.add(value);
+                        for (Item item1:OcrDetectorProcessor.items){
+                            if (item1.getKey().equalsIgnoreCase(value)){
+                                scannedItems.add(item1);
+                                break;
+                            }
+                        }
                         OcrCaptureActivity.tts.speak(item.getValue(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
                     }
                 }

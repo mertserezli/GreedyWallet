@@ -37,17 +37,21 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+import com.halfbyte.greedywallet.models.Item;
 import com.halfbyte.greedywallet.ui.camera.CameraSource;
 import com.halfbyte.greedywallet.ui.camera.CameraSourcePreview;
 import com.halfbyte.greedywallet.ui.camera.GraphicOverlay;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -79,7 +83,8 @@ public final class OcrCaptureActivity extends AppCompatActivity {
 
     // A TextToSpeech engine for speaking a String value.
     public static TextToSpeech tts;
-
+    ArrayAdapter<String> adapter;
+    ArrayList<String> categoriesInList = new ArrayList<>();
     /**
      * Initializes the UI and creates the detector pipeline.
      */
@@ -87,6 +92,10 @@ public final class OcrCaptureActivity extends AppCompatActivity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.ocr_capture);
+
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,
+                categoriesInList);
 
         preview = (CameraSourcePreview) findViewById(R.id.preview);
         graphicOverlay = (GraphicOverlay<OcrGraphic>) findViewById(R.id.graphicOverlay);
@@ -128,7 +137,30 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         tts = new TextToSpeech(this.getApplicationContext(), listener);
     }
 
-
+    public void onButtonClickOptimize(View view) {
+        for (Item item:OcrDetectorProcessor.scannedItems) {
+            String groupName = item.getCategory();
+            if (categoryExists(groupName)) {
+                adapter.add(groupName);
+            }
+        }
+        ArrayList<String> groupList = new ArrayList<String>();
+        for (int i = 0; i < adapter .getCount(); i++)
+            groupList.add(adapter .getItem(i));
+        AddManually.optimizedList = Optimizer.optimizer(groupList);
+        System.err.println(AddManually.optimizedList);
+        Intent resultIntent=new Intent(this,ResultsActivity.class);
+        startActivity(resultIntent);
+    }
+    private boolean categoryExists(String categoryName){
+        for(Item i: OcrDetectorProcessor.items){
+            if(i.getCategory().equals(categoryName)){
+                System.err.println("it is true");
+                return true;
+            }
+        }
+        return false;
+    }
     /**
      * Handles the requesting of the camera permission.  This includes
      * showing a "Snackbar" message of why the permission is needed then

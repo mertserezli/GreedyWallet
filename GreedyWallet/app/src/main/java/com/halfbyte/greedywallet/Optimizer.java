@@ -66,7 +66,7 @@ public class Optimizer {
 
     private static List<Item> getItemsInGroup(String category){
         List<Item> temp = new ArrayList<>();
-        for(Item i: AddManually.items){
+        for(Item i: OcrDetectorProcessor.items){
             if(i.getCategory().equals(category))
                 temp.add(i);
         }
