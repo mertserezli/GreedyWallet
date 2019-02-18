@@ -153,7 +153,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         startActivity(resultIntent);
     }
     private boolean categoryExists(String categoryName){
-        for(Item i: OcrDetectorProcessor.items){
+        for(Item i: DatabaseManager.getInstance().items){
             if(i.getCategory().equals(categoryName)){
                 System.err.println("it is true");
                 return true;

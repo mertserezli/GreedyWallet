@@ -32,9 +32,7 @@ import java.util.ArrayList;
  */
 public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
     ArrayList<String> scannedTexts=new ArrayList<>();
-    static ArrayList<Item> items=new ArrayList<>();
     static ArrayList<Item> scannedItems=new ArrayList<>();
-    static ArrayList<String> itemsName=new ArrayList<>();
     private GraphicOverlay<OcrGraphic> graphicOverlay;
 
     OcrDetectorProcessor(GraphicOverlay<OcrGraphic> ocrGraphicOverlay) {
@@ -62,31 +60,26 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
                 if(value.contains("\n")){
                     String[] values=value.split("\n");
                     for (String s:values){
-                        if (!scannedTexts.contains(s) && itemsName.contains(s)) {
+                        if (!scannedTexts.contains(s) && DatabaseManager.getInstance().hasItem(value)) {
                             scannedTexts.add(s);
-                            for (Item item1:OcrDetectorProcessor.items){
-                                if (item1.getKey().equalsIgnoreCase(s)){
-                                    scannedItems.add(item1);
-                                    break;
-                                }
+                            Item item1 = DatabaseManager.getInstance().findItem(s);
+                            if(item1 != null){
+                                scannedItems.add(item1);
                             }
                             OcrCaptureActivity.tts.speak(s, TextToSpeech.QUEUE_ADD, null, "DEFAULT");
                         }
                     }
                 }
                 else{
-                    if (!scannedTexts.contains(value) && itemsName.contains(value)) {
+                    if (!scannedTexts.contains(value) && DatabaseManager.getInstance().hasItem(value)) {
                         scannedTexts.add(value);
-                        for (Item item1:OcrDetectorProcessor.items){
-                            if (item1.getKey().equalsIgnoreCase(value)){
-                                scannedItems.add(item1);
-                                break;
-                            }
+                        Item item1 = DatabaseManager.getInstance().findItem(value);
+                        if(item1 != null){
+                            scannedItems.add(item1);
                         }
                         OcrCaptureActivity.tts.speak(item.getValue(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
                     }
                 }
-
             }
         }
 
