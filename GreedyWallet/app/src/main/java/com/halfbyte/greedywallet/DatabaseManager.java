@@ -50,7 +50,7 @@ public class DatabaseManager {
 
     public boolean hasItem(String itemName){
         for(Item i: items){
-            if(i.getKey().equalsIgnoreCase(itemName))
+            if(i.getIsim().equalsIgnoreCase(itemName))
                 return true;
         }
         return false;
@@ -58,7 +58,7 @@ public class DatabaseManager {
 
     public Item findItem(String itemName){
         for(Item i: items){
-            if(i.getKey().equalsIgnoreCase(itemName))
+            if(i.getIsim().equalsIgnoreCase(itemName))
                 return i;
         }
         return null;

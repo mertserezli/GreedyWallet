@@ -26,6 +26,6 @@ public class ResultsActivity extends AppCompatActivity {
         ListView results = (ListView)findViewById(R.id.OptimizedResultView);
         results.setAdapter(adapter);
         for(Item i: AddManually.optimizedList)
-            adapter.add(i.getKey() + " " + i.getPrice());
+            adapter.add(i.getIsim() + " " + i.getPrice());
     }
 }
