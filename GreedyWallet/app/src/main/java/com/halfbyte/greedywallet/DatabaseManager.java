@@ -9,12 +9,13 @@ import com.halfbyte.greedywallet.models.Item;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class DatabaseManager {
     private static DatabaseManager databaseManager = new DatabaseManager();
-    public List<Item> items=new ArrayList<>();
-    public List<String> itemsName = new ArrayList<>();
+    public List<Item> items = new CopyOnWriteArrayList<>();
 
     private DatabaseManager(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -35,7 +36,6 @@ public class DatabaseManager {
                     }
                     newItem.setPrice(Double.parseDouble((price.replaceAll(" ","").replaceAll(",","."))));
                     items.add(newItem);
-                    itemsName.add(newItem.getKey().toLowerCase());
                 }
             }
             @Override
@@ -50,7 +50,7 @@ public class DatabaseManager {
 
     public boolean hasItem(String itemName){
         for(Item i: items){
-            if(i.getKey().equals(itemName))
+            if(i.getKey().equalsIgnoreCase(itemName))
                 return true;
         }
         return false;
@@ -58,7 +58,7 @@ public class DatabaseManager {
 
     public Item findItem(String itemName){
         for(Item i: items){
-            if(i.getKey().equals(itemName))
+            if(i.getKey().equalsIgnoreCase(itemName))
                 return i;
         }
         return null;
