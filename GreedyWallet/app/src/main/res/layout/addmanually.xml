@@ -21,6 +21,16 @@
         android:selectAllOnFocus="true"
         android:singleLine="true" />
 
+    <EditText
+        android:id="@+id/budgetInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="enter budget"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:singleLine="true" />
+
     <Button
         android:id="@+id/addToList"
         android:layout_width="match_parent"

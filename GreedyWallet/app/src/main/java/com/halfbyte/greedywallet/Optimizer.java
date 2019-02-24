@@ -16,7 +16,7 @@ public class Optimizer {
             Item betterItem = null;
             double bestpriceToPopularity = Integer.MAX_VALUE;
             for (Item item : itemList) {
-                double iPriceToQuality = item.getPopularityRank() * item.getPrice();
+                double iPriceToQuality = getPriceToQuality(item);
                 if (bestpriceToPopularity > iPriceToQuality) {
                     bestpriceToPopularity = iPriceToQuality;
                     betterItem = item;
@@ -29,40 +29,40 @@ public class Optimizer {
         return optimizedItemList;
     }
 
-//    public List<Item> optimizer(List<Item> itemList, double budget) throws Exception {
-//        List<Item> optimizedItemList = optimizer(itemList);
-//        Map<ItemGroup, Item> currentOptimalOfItemGroups = new HashMap<ItemGroup, Item> ();
-//        Map<ItemGroup, Item> subOptimalOfItemGroups = new HashMap<ItemGroup, Item> ();
-//        optimizedItemList.forEach( i -> currentOptimalOfItemGroups.put(i.group, i) );
-//        optimizedItemList.forEach( i -> subOptimalOfItemGroups.put(i.group, i) );
-//        //while pricesum is higher than the budget
-//        for ( double priceSum = currentOptimalOfItemGroups.values().stream().mapToDouble(i -> i.price).sum(); budget < priceSum; ){
-//            //get cheaper suboptimal item for every itemgroup
-//            for( ItemGroup itemGroup: currentOptimalOfItemGroups.keySet()){
-//                List<Item> itemsInGroup = database.getItems(itemGroup.getValue());
-//                Item item = currentOptimalOfItemGroups.get(itemGroup);
-//                //find the suboptimal
-//                itemsInGroup.stream()
-//                        .filter( i-> i.price < item.price)
-//                        .max( Comparator.comparingDouble( this::getPriceToQuality ) )
-//                        .ifPresent( i -> subOptimalOfItemGroups.put( i.group, i ) );
-//            }
-//            //then swap the item with least quality reduction
-//            try {
-//                ItemGroup subOptimalItemGroup = subOptimalOfItemGroups.keySet().stream()
-//                        .min(Comparator.comparingDouble(k -> getPriceToQuality(currentOptimalOfItemGroups.get(k)) - getPriceToQuality(subOptimalOfItemGroups.get(k))))
-//                        .get();
-//                currentOptimalOfItemGroups.put( subOptimalItemGroup, subOptimalOfItemGroups.get(subOptimalItemGroup) );
-//            }catch (Exception e){
-//                throw new Exception( "Could not found optimized item list" );
-//            }
-//        }
-//        return new ArrayList<Item>(currentOptimalOfItemGroups.values());
-//    }
+    public static List<Item> optimizer(List<String> groupList, double budget) throws Exception {
+        List<Item> optimizedItemList = optimizer(groupList);
+        Map<String, Item> currentOptimalOfItemGroups = new HashMap<String, Item> ();
+        Map<String, Item> subOptimalOfItemGroups = new HashMap<String, Item> ();
+        optimizedItemList.forEach( i -> subOptimalOfItemGroups.put(i.getCategory(), i) );
+        currentOptimalOfItemGroups.putAll(subOptimalOfItemGroups);
+        //while pricesum is higher than the budget
+        for ( double priceSum = currentOptimalOfItemGroups.values().stream().mapToDouble(i -> i.getPrice()).sum(); budget < priceSum; priceSum = currentOptimalOfItemGroups.values().stream().mapToDouble(i -> i.getPrice()).sum()){
+            //get cheaper suboptimal item for every itemgroup
+            for( String itemGroup: currentOptimalOfItemGroups.keySet()){
+                List<Item> itemsInGroup = getItemsInGroup(itemGroup);
+                Item item = currentOptimalOfItemGroups.get(itemGroup);
+                //find the suboptimal
+                itemsInGroup.stream()
+                        .filter( i-> i.getPrice() < item.getPrice())
+                        .max( Comparator.comparingDouble( Optimizer::getPriceToQuality ) )
+                        .ifPresent( i -> subOptimalOfItemGroups.put( i.getCategory(), i ) );
+            }
+            //then swap the item with least quality reduction
+            try {
+                String subOptimalItemGroup = subOptimalOfItemGroups.keySet().stream()
+                        .min(Comparator.comparingDouble(k -> getPriceToQuality(currentOptimalOfItemGroups.get(k)) - getPriceToQuality(subOptimalOfItemGroups.get(k))))
+                        .get();
+                currentOptimalOfItemGroups.put( subOptimalItemGroup, subOptimalOfItemGroups.get(subOptimalItemGroup) );
+            }catch (Exception e){
+                throw new Exception( "Could not found optimized item list" );
+            }
+        }
+        return new ArrayList<Item>(currentOptimalOfItemGroups.values());
+    }
 
-//    private double getPriceToQuality(Item item){
-//        return item.qualityPoint / item.price;
-//    }
+    private static double getPriceToQuality(Item item){
+        return item.getPopularityRank() * item.getPrice();
+    }
 
     private static List<Item> getItemsInGroup(String category){
         List<Item> temp = new ArrayList<>();

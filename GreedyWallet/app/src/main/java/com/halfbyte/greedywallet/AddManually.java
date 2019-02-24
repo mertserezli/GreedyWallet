@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.halfbyte.greedywallet.models.Item;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -43,16 +44,22 @@ public class AddManually extends AppCompatActivity {
             }
         });
 
-        final Intent resultIntent=new Intent(this, ResultsActivity.class);
+        final Intent resultIntent = new Intent(this, ResultsActivity.class);
         final Button getOptimizedListButton = (Button) findViewById(R.id.getOptimizedItemList);
         getOptimizedListButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ArrayList<String> groupList = new ArrayList<String>();
-                for (int i = 0; i < adapter .getCount(); i++)
-                    groupList.add(adapter .getItem(i));
-                optimizedList = Optimizer.optimizer(groupList);
-                System.err.println(optimizedList);
-                startActivity(resultIntent);
+                for (int i = 0; i < adapter.getCount(); i++)
+                    groupList.add( adapter.getItem(i) );
+                EditText budgetInput = (EditText)findViewById(R.id.budgetInput);
+                String budgetString = budgetInput.getText().toString();
+                double budget = parseDouble(budgetString) == 0 ? Integer.MAX_VALUE: parseDouble(budgetString);
+                try {
+                    optimizedList = Optimizer.optimizer( groupList,budget );
+                }catch (Exception e){
+                    optimizedList = Collections.EMPTY_LIST;
+                }
+                startActivity( resultIntent );
             }
         });
     }
@@ -66,5 +73,14 @@ public class AddManually extends AppCompatActivity {
         return false;
     }
 
-
+    double parseDouble(String strNumber) {
+        if (strNumber != null && strNumber.length() > 0) {
+            try {
+                return Double.parseDouble(strNumber);
+            } catch(Exception e) {
+                return -1;   // or some value to mark this field is wrong. or make a function validates field first ...
+            }
+        }
+        else return 0;
+    }
 }
