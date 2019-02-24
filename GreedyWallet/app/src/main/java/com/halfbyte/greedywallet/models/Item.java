@@ -1,15 +1,15 @@
 package com.halfbyte.greedywallet.models;
 
 public class Item {
-    public String getKey() {
-        return key;
+    public String getIsim() {
+        return Isim;
     }
 
     public void setKey(String key) {
-        this.key = key;
+        this.Isim = key;
     }
 
-    private String key;
+    private String Isim;
 
     public String getCategory() {
         return category;
@@ -53,7 +53,7 @@ public class Item {
 
     @Override
     public String toString(){
-        return "Key:"+this.key+"\n" +
+        return "Isim:"+this.Isim+"\n" +
                 "Price:"+this.price+"\n" +
                 "Category:"+this.category ;
     }

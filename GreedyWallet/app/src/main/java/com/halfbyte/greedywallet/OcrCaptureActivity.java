@@ -44,12 +44,16 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.halfbyte.greedywallet.models.Item;
+import com.halfbyte.greedywallet.models.ItemsBoughtHistory;
 import com.halfbyte.greedywallet.ui.camera.CameraSource;
 import com.halfbyte.greedywallet.ui.camera.CameraSourcePreview;
 import com.halfbyte.greedywallet.ui.camera.GraphicOverlay;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -139,6 +143,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
 
     public void onButtonClickOptimize(View view) {
         for (Item item:OcrDetectorProcessor.scannedItems) {
+            addItemToBoughtHistory(item);
             String groupName = item.getCategory();
             if (categoryExists(groupName)) {
                 adapter.add(groupName);
@@ -151,6 +156,15 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         System.err.println(AddManually.optimizedList);
         Intent resultIntent=new Intent(this,ResultsActivity.class);
         startActivity(resultIntent);
+    }
+
+    private void addItemToBoughtHistory(Item item) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference().child("itemsBoughtHistory");
+        ItemsBoughtHistory itemsBoughtHistory = new ItemsBoughtHistory();
+        itemsBoughtHistory.setItem(item);
+        itemsBoughtHistory.setDate(new Date(new java.util.Date().getTime()).toString());
+        myRef.push().setValue(itemsBoughtHistory);
     }
     private boolean categoryExists(String categoryName){
         for(Item i: DatabaseManager.getInstance().items){

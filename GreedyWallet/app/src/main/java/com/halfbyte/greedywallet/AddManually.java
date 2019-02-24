@@ -48,8 +48,9 @@ public class AddManually extends AppCompatActivity {
         getOptimizedListButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ArrayList<String> groupList = new ArrayList<String>();
-                for (int i = 0; i < adapter .getCount(); i++)
-                    groupList.add(adapter .getItem(i));
+                for (int i = 0; i < adapter .getCount(); i++) {
+                    groupList.add(adapter.getItem(i));
+                }
                 optimizedList = Optimizer.optimizer(groupList);
                 System.err.println(optimizedList);
                 startActivity(resultIntent);
