@@ -21,7 +21,6 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.main);
     }
     public void onButtonClickScanner(View view) {
-
         Intent intent=new Intent(this,OcrCaptureActivity.class);
         startActivity(intent);
     }
@@ -29,5 +28,8 @@ public class Main extends AppCompatActivity {
         Intent intent=new Intent(this,AddManually.class);
         startActivity(intent);
     }
-
+    public void onButtonClickHistory(View view) {
+        Intent intent=new Intent(this,ShowHistory.class);
+        startActivity(intent);
+    }
 }

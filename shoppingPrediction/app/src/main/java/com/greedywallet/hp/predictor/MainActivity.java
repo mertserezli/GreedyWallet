@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.time.ZonedDateTime;
@@ -19,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void predict(View view) {
-        Button button = (Button) view;
-        ViewGroup screen = (ViewGroup) button.getParent();
+        ViewGroup screen = (ViewGroup) findViewById(R.id.mainview);
+
         screen.removeViews(0,screen.getChildCount()-1);
 
         ZonedDateTime[] past = new ZonedDateTime[5];
