@@ -16,4 +16,16 @@
         android:layout_height="wrap_content"
         android:text="ADD MANUALLY"
         android:onClick="onButtonClickManual"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FIND CLOSEST GROCERY STORE"
+        android:onClick="onButtonClickMaps"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClickHistory"
+        android:text="SHOW PURCHASE HISTORY" />
 </LinearLayout>
