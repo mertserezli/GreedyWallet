@@ -43,6 +43,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAkoyfEzMuLxEEEkle830xD-zr9_BlPeQ0" />
+        <activity android:name=".ShowHistory" />
+        <activity android:name=".ResultsActivity"></activity>
     </application>
 
 </manifest>
