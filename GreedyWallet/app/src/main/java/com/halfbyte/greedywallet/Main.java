@@ -29,5 +29,9 @@ public class Main extends AppCompatActivity {
         Intent intent=new Intent(this,AddManually.class);
         startActivity(intent);
     }
+    public void onButtonClickMaps(View view){
+        Intent intent=new Intent(this,CheckInActivity.class);
+        startActivity(intent);
+    }
 
 }
