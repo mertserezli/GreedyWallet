@@ -37,9 +37,9 @@ public class AddManually extends AppCompatActivity {
         addToListButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 EditText input = (EditText)findViewById(R.id.itemNameInput);
-                final String groupName = input.getText().toString();
-                if (categoryExists(groupName)){
-                    adapter.add(groupName);
+                final String itemName = input.getText().toString();
+                if (DatabaseManager.getInstance().containsItem(itemName)){
+                    adapter.add(itemName);
                 }
             }
         });
@@ -62,15 +62,6 @@ public class AddManually extends AppCompatActivity {
                 startActivity( resultIntent );
             }
         });
-    }
-
-    private boolean categoryExists(String categoryName){
-        for(Item i: DatabaseManager.getInstance().items){
-            if(i.getCategory().equals(categoryName)){
-                return true;
-            }
-        }
-        return false;
     }
 
     double parseDouble(String strNumber) {

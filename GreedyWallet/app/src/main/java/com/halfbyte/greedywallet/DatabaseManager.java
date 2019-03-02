@@ -28,6 +28,7 @@ public class DatabaseManager {
                     HashMap value = (HashMap) data.getValue();
                     newItem.setKey((String) value.get("Isim"));
                     newItem.setCategory((String) value.get("AnaKategori"));
+                    newItem.setSubCategory((String) value.get("AltKategori"));
                     String price=((String) value.get("Fiyat"));
                     newItem.setPopularityRank( (Long) value.get("PopularityRank"));
                     if(price.contains(".")){
@@ -51,6 +52,14 @@ public class DatabaseManager {
     public boolean hasItem(String itemName){
         for(Item i: items){
             if(i.getIsim().equalsIgnoreCase(itemName))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean containsItem(String itemName){
+        for(Item i: items){
+            if(i.getIsim().toLowerCase().contains(itemName.toLowerCase()))
                 return true;
         }
         return false;
