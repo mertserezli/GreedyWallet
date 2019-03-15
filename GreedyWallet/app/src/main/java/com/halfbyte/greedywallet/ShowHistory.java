@@ -14,7 +14,7 @@ public class ShowHistory extends AppCompatActivity {
         setContentView(R.layout.showhistory);
 
         Context ctxt = this;
-        ViewGroup screen = (ViewGroup) findViewById(R.id.mainview);
+        ViewGroup screen = (ViewGroup) findViewById(R.id.historyview);
 
         for (String item : HistoryManager.getInstance().getItems()) {
             TextView itemView = new TextView(ctxt);

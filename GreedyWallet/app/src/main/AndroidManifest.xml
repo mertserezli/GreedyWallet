@@ -44,6 +44,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAkoyfEzMuLxEEEkle830xD-zr9_BlPeQ0" />
         <activity android:name=".ShowHistory" />
+        <activity android:name=".ShowPredictions" />
         <activity android:name=".ResultsActivity"></activity>
     </application>
 

@@ -165,6 +165,8 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         itemsBoughtHistory.setItem(item);
         itemsBoughtHistory.setDate(new Date(new java.util.Date().getTime()).toString());
         myRef.push().setValue(itemsBoughtHistory);
+        Context ctxt = this;
+        Predictor.predict(item,this);
     }
     private boolean categoryExists(String categoryName){
         for(Item i: DatabaseManager.getInstance().items){

@@ -36,4 +36,9 @@ public class Main extends AppCompatActivity {
         Intent intent=new Intent(this,ShowHistory.class);
         startActivity(intent);
     }
+
+    public void onButtonClickPredictions(View view) {
+        Intent intent=new Intent(this,ShowPredictions.class);
+        startActivity(intent);
+    }
 }
