@@ -29,12 +29,13 @@ public class DatabaseManager {
                     newItem.setKey((String) value.get("Isim"));
                     newItem.setCategory((String) value.get("AnaKategori"));
                     newItem.setSubCategory((String) value.get("AltKategori"));
-                    String price=((String) value.get("Fiyat"));
+                    String price=( value.get("Fiyat").toString());
                     newItem.setPopularityRank( (Long) value.get("PopularityRank"));
-                    if(price.contains(".")){
+                    /*if(price.contains(".")){
                         price=price.substring(0,price.indexOf(","));
                         price=price.replace(".","");
                     }
+                    */
                     newItem.setPrice(Double.parseDouble((price.replaceAll(" ","").replaceAll(",","."))));
                     items.add(newItem);
                 }

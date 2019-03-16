@@ -60,13 +60,13 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
                 if(value.contains("\n")){
                     String[] values=value.split("\n");
                     for (String s:values){
-                        if (!scannedTexts.contains(s) && DatabaseManager.getInstance().hasItem(value)) {
+                        if (!scannedTexts.contains(s) && DatabaseManager.getInstance().hasItem(s)) {
                             scannedTexts.add(s);
                             Item item1 = DatabaseManager.getInstance().findItem(s);
                             if(item1 != null){
                                 scannedItems.add(item1);
                             }
-                            OcrCaptureActivity.tts.speak(s, TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+                            OcrCaptureActivity.tts.speak(item1.getIsim(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
                         }
                     }
                 }
@@ -77,7 +77,7 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
                         if(item1 != null){
                             scannedItems.add(item1);
                         }
-                        OcrCaptureActivity.tts.speak(item.getValue(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+                        OcrCaptureActivity.tts.speak(item1.getIsim(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
                     }
                 }
             }
