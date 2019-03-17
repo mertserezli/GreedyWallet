@@ -71,7 +71,7 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
                             }
                         }
                     }
-                    if (!itemName.isEmpty() && !scannedTexts.contains(itemName)) {
+                    if (!itemName.isEmpty() && !scannedTexts.contains(itemName) && DatabaseManager.getInstance().containsItem(itemName)) {
                         scannedTexts.add(itemName);
                         Item item1 = DatabaseManager.getInstance().getContainsItem(itemName);
                         if (item1 != null) {

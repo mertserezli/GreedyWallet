@@ -87,8 +87,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
 
     // A TextToSpeech engine for speaking a String value.
     public static TextToSpeech tts;
-    ArrayAdapter<String> adapter;
-    ArrayList<String> categoriesInList = new ArrayList<>();
+
     /**
      * Initializes the UI and creates the detector pipeline.
      */
@@ -97,9 +96,6 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.ocr_capture);
 
-        adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,
-                categoriesInList);
 
         preview = (CameraSourcePreview) findViewById(R.id.preview);
         graphicOverlay = (GraphicOverlay<OcrGraphic>) findViewById(R.id.graphicOverlay);
@@ -142,17 +138,12 @@ public final class OcrCaptureActivity extends AppCompatActivity {
     }
 
     public void onButtonClickOptimize(View view) {
+        ArrayList<String> itemList = new ArrayList<String>();
         for (Item item:OcrDetectorProcessor.scannedItems) {
+            itemList.add(item.getIsim());
             addItemToBoughtHistory(item);
-            String groupName = item.getCategory();
-            if (categoryExists(groupName)) {
-                adapter.add(groupName);
-            }
         }
-        ArrayList<String> groupList = new ArrayList<String>();
-        for (int i = 0; i < adapter .getCount(); i++)
-            groupList.add(adapter .getItem(i));
-        AddManually.optimizedList = Optimizer.optimizer(groupList);
+        AddManually.optimizedList = Optimizer.optimizer(itemList);
         System.err.println(AddManually.optimizedList);
         Intent resultIntent=new Intent(this,ResultsActivity.class);
         startActivity(resultIntent);
