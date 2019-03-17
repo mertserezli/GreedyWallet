@@ -1,5 +1,7 @@
 package com.halfbyte.greedywallet;
 
+import android.util.Log;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +37,7 @@ public class DatabaseManager {
                     }
                     */
                     newItem.setPrice(Double.parseDouble((price.replaceAll(" ","").replaceAll(",","."))));
+                    Log.i("itemName",newItem.getIsim());
                     items.add(newItem);
                 }
             }
@@ -64,12 +67,32 @@ public class DatabaseManager {
         return false;
     }
 
+    public Item getContainsItem(String itemName){
+        for(Item i: items){
+            if(i.getIsim().toLowerCase().contains(itemName.toLowerCase()))
+                return i;
+        }
+        return null;
+    }
+
     public Item findItem(String itemName){
         for(Item i: items){
             if(i.getIsim().equalsIgnoreCase(itemName))
                 return i;
         }
         return null;
+    }
+
+    public int getItemFrequency(String itemName){
+        int count = 0;
+        for(Item i: items){
+            String[] itemWords = i.getIsim().toLowerCase().split(" ");
+            for(String word: itemWords){
+                if(word.equals(itemName))
+                    count++;
+            }
+        }
+        return count;
     }
 
 }

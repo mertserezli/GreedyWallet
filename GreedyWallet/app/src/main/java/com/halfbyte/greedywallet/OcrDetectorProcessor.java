@@ -49,32 +49,32 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
     @Override
     public void receiveDetections(Detector.Detections<TextBlock> detections) {
         graphicOverlay.clear();
-        SparseArray<TextBlock> items = detections.getDetectedItems();
-        for (int i = 0; i < items.size(); ++i) {
-            TextBlock item = items.valueAt(i);
-            if (item != null && item.getValue() != null) {
-                Log.d("OcrDetectorProcessor", "Text detected! " + item.getValue());
-                OcrGraphic graphic = new OcrGraphic(graphicOverlay, item);
+        SparseArray<TextBlock> textBlocks = detections.getDetectedItems();
+        for (int i = 0; i < textBlocks.size(); ++i) {
+            TextBlock scannedText = textBlocks.valueAt(i);
+            if (scannedText != null && scannedText.getValue() != null) {
+                Log.d("OcrDetectorProcessor", "Text detected! " + scannedText.getValue());
+                OcrGraphic graphic = new OcrGraphic(graphicOverlay, scannedText);
                 //graphicOverlay.add(graphic);
-                String value=item.getValue().toLowerCase();
-                if(value.contains("\n")){
-                    String[] values=value.split("\n");
-                    for (String s:values){
-                        if (!scannedTexts.contains(s) && DatabaseManager.getInstance().hasItem(s)) {
-                            scannedTexts.add(s);
-                            Item item1 = DatabaseManager.getInstance().findItem(s);
-                            if(item1 != null){
-                                scannedItems.add(item1);
+                String value=scannedText.getValue().toLowerCase();
+                for (String line: value.split("\n")){
+                    String itemName = "";
+                    //determine if the product has brand
+                    if(line.split(" ").length > 1 && DatabaseManager.getInstance().containsItem(line)){
+                        itemName = line;
+                    }else {
+                        int maxFreq = 0;
+                        for (String word: line.split(" ")) {
+                            if( maxFreq < DatabaseManager.getInstance().getItemFrequency(word)){
+                                maxFreq = DatabaseManager.getInstance().getItemFrequency(word);
+                                itemName = word;
                             }
-                            OcrCaptureActivity.tts.speak(item1.getIsim(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
                         }
                     }
-                }
-                else{
-                    if (!scannedTexts.contains(value) && DatabaseManager.getInstance().hasItem(value)) {
-                        scannedTexts.add(value);
-                        Item item1 = DatabaseManager.getInstance().findItem(value);
-                        if(item1 != null){
+                    if (!itemName.isEmpty() && !scannedTexts.contains(itemName)) {
+                        scannedTexts.add(itemName);
+                        Item item1 = DatabaseManager.getInstance().getContainsItem(itemName);
+                        if (item1 != null) {
                             scannedItems.add(item1);
                         }
                         OcrCaptureActivity.tts.speak(item1.getIsim(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
@@ -82,7 +82,6 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
                 }
             }
         }
-
     }
 
     /**
