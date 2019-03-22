@@ -39,7 +39,6 @@ public class DatabaseManager {
                     }
                     */
                     newItem.setPrice(Double.parseDouble((price.replaceAll(" ","").replaceAll(",","."))));
-                    Log.i("itemName",newItem.getIsim());
                     items.add(newItem);
                 }
             }

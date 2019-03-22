@@ -58,26 +58,28 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
                 //graphicOverlay.add(graphic);
                 String value=scannedText.getValue().toLowerCase();
                 for (String line: value.split("\n")){
+                    line = line.trim();
                     String itemName = "";
-                    //determine if the product has brand
-                    if(line.split(" ").length > 1 && DatabaseManager.getInstance().containsItem(line)){
-                        itemName = line;
-                    }else {
-                        int maxFreq = 0;
-                        for (String word: line.split(" ")) {
-                            if( maxFreq < DatabaseManager.getInstance().getItemFrequency(word)){
-                                maxFreq = DatabaseManager.getInstance().getItemFrequency(word);
-                                itemName = word;
-                            }
+                    int maxFreq = 0;
+                    for (String word: line.split(" ")) {
+                        if(line.split(" ").length < 2)
+                            break;
+                        if(word.length() < 4 || word.equals("adet") || word.equals("buyuk") || word.equals("taze"))
+                            continue;
+                        if( maxFreq < DatabaseManager.getInstance().getItemFrequency(word)){
+                            maxFreq = DatabaseManager.getInstance().getItemFrequency(word);
+                            itemName = word;
                         }
                     }
-                    if (!itemName.isEmpty() && !scannedTexts.contains(itemName) && DatabaseManager.getInstance().containsItem(itemName)) {
+                    if (!itemName.isEmpty() && !scannedTexts.contains(itemName) && DatabaseManager.getInstance().containsItem(itemName) && maxFreq != 0) {
                         scannedTexts.add(itemName);
                         Item item1 = DatabaseManager.getInstance().getContainsItem(itemName);
                         if (item1 != null) {
                             scannedItems.add(item1);
                         }
-                        OcrCaptureActivity.tts.speak(item1.getIsim(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+                        Log.d("itemName",itemName);
+                        Log.d("Found item", item1.getIsim());
+                        //OcrCaptureActivity.tts.speak(item1.getIsim(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
                     }
                 }
             }
