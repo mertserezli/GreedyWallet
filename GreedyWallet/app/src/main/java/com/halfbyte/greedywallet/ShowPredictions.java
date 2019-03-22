@@ -21,6 +21,10 @@ public class ShowPredictions extends AppCompatActivity {
 
         screen.removeAllViews();
 
+        HistoryManager historyManager = HistoryManager.getInstance();
+        for(String item : historyManager.getItems())
+            Predictor.predict(item,ctxt);
+
         SharedPreferences sharedPreferences = ctxt.getSharedPreferences("predictions", Context.MODE_PRIVATE);
         Map<String, ?> predictions = sharedPreferences.getAll();
         for(String item : predictions.keySet())

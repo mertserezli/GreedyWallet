@@ -22,6 +22,8 @@ public class HistoryManager {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                if (history.size() != 0)
+                    history.clear();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     String itemName = ds.child("item").child("isim").getValue().toString();
                     String purchaseDate = ds.child("date").getValue().toString();

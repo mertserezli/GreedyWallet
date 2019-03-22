@@ -3,28 +3,69 @@ package com.halfbyte.greedywallet;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Period;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Predictor
 {
 	public static void predict(String item, Context ctxt)
 	{
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		ArrayList<String> past_string = HistoryManager.getInstance().getItemPurchaseDates(item);
-		ZonedDateTime[] past = new ZonedDateTime[past_string.size()];
+		past_string.sort(Comparator.comparing(String::toString));
+		LocalDateTime[] past = new LocalDateTime[past_string.size()];
+		if (past_string.size() < 2)
+			return;
 		for(int i = 0; i < past_string.size(); i++)
 		{
-			past[i] = ZonedDateTime.parse(past_string.get(i),DateTimeFormatter.ISO_LOCAL_DATE);
+			LocalDate ld = LocalDate.parse(past_string.get(i),formatter);
+			past[i] = LocalDateTime.of(ld, LocalDateTime.now().toLocalTime());
 		}
-		int total = 0;
-		for(int i = 1; i < past.length; i++)
+		if (Period.between(past[past.length - 1].toLocalDate(), past[0].toLocalDate()).getDays() == 0)
+			return;
+
+		int final_mult = 1;
+		int limit = 4;
+		int i = 0;
+		for(i = past.length - 1; i > past.length - limit && i > 0; i--)
 		{
-			total += Period.between(past[i-1].toLocalDate(), past[i].toLocalDate()).getDays();
+			if (Period.between(past[i-1].toLocalDate(), past[i].toLocalDate()).getDays() == 0)
+			{
+				if (Period.between(past[i-1].toLocalDate(), past[past.length-1].toLocalDate()).getDays() == 0)
+				{
+					final_mult++;
+				}
+				limit++;
+			}
 		}
-		int avg = total/(past.length-1);
-		ZonedDateTime pred_time = past[past.length-1].plusDays(avg);
+		if(i > 0)
+		{
+			while (Period.between(past[i - 1].toLocalDate(), past[i].toLocalDate()).getDays() == 0) {
+				limit++;
+				i--;
+			}
+		}
+		int div = 1;
+		int total = 0;
+		int final_div = 0;
+		for(i = past.length - limit + 1; i < past.length - 1; i++)
+		{
+			if (Period.between(past[i].toLocalDate(), past[i+1].toLocalDate()).getDays() == 0)
+				div++;
+			else
+			{
+				total += Period.between(past[i].toLocalDate(), past[i + 1].toLocalDate()).getDays() / div;
+				final_div++;
+			}
+		}
+		int avg = total/final_div;
+
+		LocalDateTime pred_time = past[past.length-1].plusDays(Math.round(avg)*final_mult);
 		String prediction = pred_time.getDayOfMonth() + "/" + pred_time.getMonthValue() + "/" + pred_time.getYear();
 
 		SharedPreferences sharedPreferences = ctxt.getSharedPreferences("predictions", Context.MODE_PRIVATE);

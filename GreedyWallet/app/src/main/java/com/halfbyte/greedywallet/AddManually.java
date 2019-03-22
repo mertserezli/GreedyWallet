@@ -1,5 +1,7 @@
 package com.halfbyte.greedywallet;
 
+import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,11 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.halfbyte.greedywallet.models.Item;
+import com.halfbyte.greedywallet.models.ItemsBoughtHistory;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 public class AddManually extends AppCompatActivity {
@@ -50,7 +55,7 @@ public class AddManually extends AppCompatActivity {
             public void onClick(View v) {
                 ArrayList<String> groupList = new ArrayList<String>();
                 for (int i = 0; i < adapter.getCount(); i++)
-                    groupList.add( adapter.getItem(i) );
+                    groupList.add(adapter.getItem(i));
                 EditText budgetInput = (EditText)findViewById(R.id.budgetInput);
                 String budgetString = budgetInput.getText().toString();
                 double budget = parseDouble(budgetString) == 0 ? Integer.MAX_VALUE: parseDouble(budgetString);
@@ -58,6 +63,18 @@ public class AddManually extends AppCompatActivity {
                     optimizedList = Optimizer.optimizer( groupList,budget );
                 }catch (Exception e){
                     optimizedList = Collections.EMPTY_LIST;
+                }
+                ArrayList<ItemsBoughtHistory> latest_purchases = new ArrayList<>();
+                for(String itemName : groupList)
+                {
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference().child("itemsBoughtHistory");
+                    ItemsBoughtHistory itemsBoughtHistory = new ItemsBoughtHistory();
+                    DatabaseManager databaseManager = DatabaseManager.getInstance();
+                    itemsBoughtHistory.setItem(databaseManager.findItem(itemName));
+                    itemsBoughtHistory.setDate(new Date(new java.util.Date().getTime()).toString());
+                    latest_purchases.add(itemsBoughtHistory);
+                    myRef.push().setValue(itemsBoughtHistory);
                 }
                 startActivity( resultIntent );
             }
