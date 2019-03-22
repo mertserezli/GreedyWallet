@@ -32,4 +32,8 @@ public class Main extends AppCompatActivity {
         Intent intent=new Intent(this,ShowPredictions.class);
         startActivity(intent);
     }
+    public void onButtonClickPromotions(View view) {
+        Intent intent=new Intent(this,ShowPromotions.class);
+        startActivity(intent);
+    }
 }

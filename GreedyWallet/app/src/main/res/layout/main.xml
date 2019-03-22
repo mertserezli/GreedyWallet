@@ -37,4 +37,11 @@
         android:layout_height="wrap_content"
         android:onClick="onButtonClickPredictions"
         android:text="DISPLAY PREDICTIONS" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClickPromotions"
+        android:text="SHOW PROMOTIONS" />
 </LinearLayout>

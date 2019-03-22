@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/inputItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="enter item name"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:singleLine="true" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Min: "
+            android:layout_margin="@dimen/activity_horizontal_margin"/>
+        <EditText
+            android:id="@+id/minDiscountInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="enter min disc."
+            android:inputType="number" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Max: "
+            android:layout_margin="@dimen/activity_horizontal_margin"/>
+        <EditText
+            android:id="@+id/maxDiscountInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="enter max disc."
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/findPromotionsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Promotions"
+        tools:textAllCaps="false"
+        />
+
+    <ListView
+        android:id="@+id/promotionList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </ListView>
+
+    >
+
+</LinearLayout>

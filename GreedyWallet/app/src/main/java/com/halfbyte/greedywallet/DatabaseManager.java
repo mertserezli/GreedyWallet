@@ -31,6 +31,8 @@ public class DatabaseManager {
                     newItem.setSubCategory((String) value.get("AltKategori"));
                     String price=( value.get("Fiyat").toString());
                     newItem.setPopularityRank( (Long) value.get("PopularityRank"));
+                    newItem.setMarket((Long)value.get("MarketId"));
+                    newItem.setDiscount((String)value.get("Indirim"));
                     /*if(price.contains(".")){
                         price=price.substring(0,price.indexOf(","));
                         price=price.replace(".","");
