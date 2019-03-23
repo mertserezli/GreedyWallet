@@ -77,9 +77,7 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
                         if (item1 != null) {
                             scannedItems.add(item1);
                         }
-                        Log.d("itemName",itemName);
-                        Log.d("Found item", item1.getIsim());
-                        //OcrCaptureActivity.tts.speak(item1.getIsim(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+                        OcrCaptureActivity.tts.speak(item1.getIsim(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
                     }
                 }
             }
