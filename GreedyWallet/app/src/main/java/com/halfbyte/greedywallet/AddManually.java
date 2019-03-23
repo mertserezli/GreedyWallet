@@ -1,7 +1,5 @@
 package com.halfbyte.greedywallet;
 
-import android.app.Application;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -64,16 +62,13 @@ public class AddManually extends AppCompatActivity {
                 }catch (Exception e){
                     optimizedList = Collections.EMPTY_LIST;
                 }
-                ArrayList<ItemsBoughtHistory> latest_purchases = new ArrayList<>();
-                for(String itemName : groupList)
+                for(Item item : optimizedList)
                 {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference().child("itemsBoughtHistory");
                     ItemsBoughtHistory itemsBoughtHistory = new ItemsBoughtHistory();
-                    DatabaseManager databaseManager = DatabaseManager.getInstance();
-                    itemsBoughtHistory.setItem(databaseManager.findItem(itemName));
+                    itemsBoughtHistory.setItem(item);
                     itemsBoughtHistory.setDate(new Date(new java.util.Date().getTime()).toString());
-                    latest_purchases.add(itemsBoughtHistory);
                     myRef.push().setValue(itemsBoughtHistory);
                 }
                 startActivity( resultIntent );
