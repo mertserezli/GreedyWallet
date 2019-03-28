@@ -3,6 +3,8 @@ package com.halfbyte.greedywallet;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.jakewharton.threetenabp.AndroidThreeTen;
+
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.Period;
@@ -15,6 +17,7 @@ public class Predictor
 {
 	public static void predict(String item, Context ctxt)
 	{
+        AndroidThreeTen.init(ctxt);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		ArrayList<String> past_string = HistoryManager.getInstance().getItemPurchaseDates(item);
 		past_string.sort(Comparator.comparing(String::toString));
