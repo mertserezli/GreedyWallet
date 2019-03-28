@@ -29,7 +29,22 @@ public class ShowHistory extends AppCompatActivity {
 
             ArrayList<String> purchaseDates = HistoryManager.getInstance().getItemPurchaseDates(item);
             purchaseDates.sort(Comparator.comparing(String::toString).reversed());
-            for (String purchaseDate : purchaseDates) {
+            int mult = 1;
+            for (int i = 0; i < purchaseDates.size(); i++) {
+                if(i < purchaseDates.size()-1)
+                {
+                    if(purchaseDates.get(i).equals(purchaseDates.get(i+1)))
+                    {
+                        mult++;
+                        continue;
+                    }
+                }
+                String purchaseDate = purchaseDates.get(i);
+                if(mult > 1)
+                {
+                    purchaseDate = purchaseDate + " x" + mult;
+                    mult = 1;
+                }
                 TextView purchaseDateView = new TextView(ctxt);
                 purchaseDateView.setText(purchaseDate);
 
